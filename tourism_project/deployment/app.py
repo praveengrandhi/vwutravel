@@ -2,7 +2,13 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-model_path = "best_tourism_model.joblib"
+# Get the directory where app.py is located
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Build the absolute path to your model file
+model_path = os.path.join(BASE_DIR, "best_tourism_model.joblib")
+
+# Load the model
 model = joblib.load(model_path)
 
 st.title("Wellness Tourism Package Purchase Prediction")
